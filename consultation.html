@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AURA | Book a Consultation
+    </title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* ================================
+           PAGE
+        ================================= */
+
+        .aura-consult-page {
+
+            --aura-bg: #f4f0e9;
+
+            --aura-paper: #e8e2d8;
+
+            --aura-dark: #36342d;
+
+            --aura-muted: #716d64;
+
+            --aura-line:
+                rgba(54,52,45,.18);
+
+            margin: 0;
+
+            background:
+                var(--aura-bg);
+
+            color:
+                var(--aura-dark);
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        .aura-consult-page *,
+        .aura-consult-page *::before,
+        .aura-consult-page *::after {
+
+            box-sizing: border-box;
+        }
+
+
+        .aura-consult-page a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        .aura-consult-nav {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 10;
+
+            padding:
+                24px
+                5.5vw;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto
+                1fr;
+
+            align-items: center;
+
+            gap: 30px;
+
+            color: white;
+        }
+
+
+        .aura-consult-logo {
+
+            display: flex;
+
+            flex-direction: column;
+
+            width: max-content;
+        }
+
+
+        .aura-consult-logo span {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 28px;
+
+            line-height: .75;
+
+            letter-spacing: 3px;
+        }
+
+
+        .aura-consult-logo small {
+
+            margin-top: 8px;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .aura-consult-links {
+
+            display: flex;
+
+            gap: 27px;
+        }
+
+
+        .aura-consult-links a {
+
+            font-size: 9px;
+
+            letter-spacing: 1.1px;
+
+            opacity: .82;
+
+            transition:
+                opacity .3s;
+        }
+
+
+        .aura-consult-links a:hover {
+
+            opacity: 1;
+        }
+
+
+        .aura-consult-back {
+
+            justify-self: end;
+
+            font-size: 8px;
+
+            letter-spacing: 1.2px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.55);
+
+            padding-bottom: 5px;
+        }
+
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .aura-consult-hero {
+
+            min-height: 72vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding:
+                145px
+                7vw
+                90px;
+
+            color: white;
+
+            overflow: hidden;
+        }
+
+
+        .aura-consult-hero-bg {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                url(
+                "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2200&q=90"
+                )
+
+                center / cover;
+
+            animation:
+                auraConsultZoom
+                12s
+                ease-out
+                forwards;
+        }
+
+
+        .aura-consult-hero-shade {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(40,38,31,.78),
+                    rgba(40,38,31,.25)
+                );
+        }
+
+
+        .aura-consult-hero-copy {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 820px;
+        }
+
+
+        .aura-consult-eyebrow {
+
+            margin:
+                0
+                0
+                16px;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            font-weight: 600;
+        }
+
+
+        .aura-consult-hero h1 {
+
+            margin: 0;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(54px,6.5vw,94px);
+
+            font-weight: 400;
+
+            line-height: .84;
+
+            letter-spacing: -1.5px;
+        }
+
+
+        .aura-consult-hero h1 em {
+
+            font-style: italic;
+        }
+
+
+        .aura-consult-hero-copy > p:last-child {
+
+            max-width: 520px;
+
+            margin:
+                28px
+                0
+                0;
+
+            font-size: 12px;
+
+            line-height: 1.85;
+
+            color:
+                rgba(255,255,255,.82);
+        }
+
+
+        .aura-consult-hero-mark {
+
+            position: absolute;
+
+            right: 6vw;
+
+            bottom: -60px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 360px;
+
+            opacity: .08;
+        }
+
+
+
+        /* ================================
+           MAIN SECTION
+        ================================= */
+
+        .aura-consult-layout {
+
+            max-width: 1220px;
+
+            margin: auto;
+
+            padding:
+                110px
+                5vw
+                130px;
+
+            display: grid;
+
+            grid-template-columns:
+                .75fr
+                1.25fr;
+
+            gap: 9vw;
+        }
+
+
+        /* LEFT SIDE */
+
+        .aura-consult-details h2 {
+
+            margin:
+                0
+                0
+                28px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(45px,4.4vw,68px);
+
+            font-weight: 400;
+
+            line-height: .88;
+
+            letter-spacing: -1px;
+        }
+
+
+        .aura-consult-body {
+
+            margin: 0;
+
+            color:
+                var(--aura-muted);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+            max-width: 410px;
+        }
+
+
+        /* BENEFITS */
+
+        .aura-consult-benefits {
+
+            margin-top: 48px;
+
+            border-top:
+                1px solid
+                var(--aura-line);
+        }
+
+
+        .aura-consult-benefits div {
+
+            display: grid;
+
+            grid-template-columns:
+                35px
+                1fr;
+
+            gap: 14px;
+
+            padding:
+                15px
+                0;
+
+            border-bottom:
+                1px solid
+                var(--aura-line);
+        }
+
+
+        .aura-consult-benefits span {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 22px;
+
+            color: #8b867b;
+        }
+
+
+        .aura-consult-benefits p {
+
+            margin: 3px 0;
+
+            font-size: 10px;
+
+            line-height: 1.5;
+        }
+
+
+        /* CONTACT */
+
+        .aura-consult-contact {
+
+            margin-top: 45px;
+        }
+
+
+        .aura-consult-contact span {
+
+            font-size: 8px;
+
+            letter-spacing: 1.7px;
+
+            font-weight: 600;
+        }
+
+
+        .aura-consult-contact p {
+
+            font-size: 10px;
+
+            line-height: 1.8;
+
+            color:
+                var(--aura-muted);
+        }
+
+
+        .aura-consult-contact a {
+
+            font-size: 10px;
+
+            border-bottom:
+                1px solid
+                var(--aura-dark);
+
+            padding-bottom: 4px;
+        }
+
+
+
+        /* ================================
+           FORM CONTAINER
+        ================================= */
+
+        .aura-consult-form-wrap {
+
+            background:
+                #eae5dc;
+
+            padding:
+                55px
+                52px;
+
+            position: relative;
+
+            box-shadow:
+                0 22px 60px
+                rgba(50,46,38,.07);
+        }
+
+
+        .aura-consult-form-head {
+
+            margin-bottom: 40px;
+        }
+
+
+        .aura-consult-form-head h2 {
+
+            margin: 0;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(45px,4.4vw,68px);
+
+            font-weight: 400;
+
+            line-height: .88;
+        }
+
+
+        .aura-consult-form-head h2 em {
+
+            font-style: italic;
+        }
+
+
+
+        /* ================================
+           PROGRESS BAR
+        ================================= */
+
+        .aura-consult-progress {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 5px;
+
+            margin-bottom: 42px;
+        }
+
+
+        .aura-consult-progress span {
+
+            height: 2px;
+
+            background:
+                #cbc5ba;
+
+            transition:
+                background .5s ease;
+        }
+
+
+        .aura-consult-progress
+        span.aura-progress-active {
+
+            background:
+                var(--aura-dark);
+        }
+
+
+
+        /* ================================
+           STEPS
+        ================================= */
+
+        .aura-consult-step {
+
+            display: none;
+
+            animation:
+                auraStepIn
+                .5s
+                ease
+                both;
+        }
+
+
+        .aura-consult-step.is-active {
+
+            display: block;
+        }
+
+
+        .aura-step-label {
+
+            margin:
+                0
+                0
+                25px;
+
+            font-size: 8px;
+
+            letter-spacing: 1.7px;
+
+            font-weight: 600;
+
+            color: #858076;
+        }
+
+
+        /* INPUT GRID */
+
+        .aura-field-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap:
+                25px
+                20px;
+        }
+
+
+        .aura-consult-form label {
+
+            display: block;
+        }
+
+
+        .aura-consult-form label > span,
+        .aura-choice-title {
+
+            display: block;
+
+            margin-bottom: 9px;
+
+            font-size: 8px;
+
+            letter-spacing: 1.1px;
+
+            font-weight: 600;
+        }
+
+
+        /* INPUTS */
+
+        .aura-consult-form input,
+        .aura-consult-form select,
+        .aura-consult-form textarea {
+
+            width: 100%;
+
+            border: 0;
+
+            border-bottom:
+                1px solid
+                #bdb7ac;
+
+            background:
+                transparent;
+
+            padding:
+                10px
+                0
+                12px;
+
+            outline: none;
+
+            color:
+                var(--aura-dark);
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 12px;
+
+            border-radius: 0;
+
+            transition:
+                border-color .3s,
+                transform .3s;
+        }
+
+
+        .aura-consult-form textarea {
+
+            resize: vertical;
+
+            min-height: 120px;
+        }
+
+
+        .aura-consult-form input:focus,
+        .aura-consult-form select:focus,
+        .aura-consult-form textarea:focus {
+
+            border-bottom-color:
+                var(--aura-dark);
+
+            transform:
+                translateX(2px);
+        }
+
+
+        .aura-consult-form input::placeholder,
+        .aura-consult-form textarea::placeholder {
+
+            color: #aaa49a;
+        }
+
+
+        .aura-full-field {
+
+            margin-bottom: 32px;
+        }
+
+
+
+        /* ================================
+           RADIO OPTIONS
+        ================================= */
+
+        .aura-choice-title {
+
+            margin-top: 5px;
+        }
+
+
+        .aura-choice-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 8px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .aura-choice-grid--three {
+
+            grid-template-columns:
+                repeat(3,1fr);
+        }
+
+
+        .aura-choice-grid label {
+
+            position: relative;
+        }
+
+
+        .aura-choice-grid input {
+
+            position: absolute;
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+
+        .aura-choice-grid label span {
+
+            display: block;
+
+            border:
+                1px solid
+                #c8c2b7;
+
+            padding:
+                15px
+                12px;
+
+            text-align: center;
+
+            font-size: 8px;
+
+            letter-spacing: .8px;
+
+            margin: 0;
+
+            transition:
+                all .25s ease;
+        }
+
+
+        .aura-choice-grid
+        input:checked + span,
+        .aura-choice-grid
+        label:hover span {
+
+            border-color:
+                var(--aura-dark);
+
+            background:
+                #dfd9cf;
+        }
+
+
+
+        /* ================================
+           BUTTONS
+        ================================= */
+
+        .aura-consult-next,
+        .aura-submit {
+
+            border: 0;
+
+            background:
+                var(--aura-dark);
+
+            color: white;
+
+            cursor: pointer;
+
+            padding:
+                15px
+                20px;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.3px;
+
+            margin-top: 10px;
+
+            transition:
+                transform .3s,
+                background .3s;
+        }
+
+
+        .aura-consult-next {
+
+            float: right;
+        }
+
+
+        .aura-consult-next span,
+        .aura-submit span {
+
+            font-size: 13px;
+
+            margin-left: 15px;
+        }
+
+
+        .aura-consult-next:hover,
+        .aura-submit:hover {
+
+            transform:
+                translateY(-3px);
+
+            background:
+                #22211d;
+        }
+
+
+        .aura-step-buttons {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-top: 10px;
+        }
+
+
+        .aura-consult-back-btn {
+
+            border: 0;
+
+            background: none;
+
+            padding: 10px 0;
+
+            cursor: pointer;
+
+            color: #6f6a60;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.1px;
+        }
+
+
+
+        /* ================================
+           SUCCESS MESSAGE
+        ================================= */
+
+        .aura-consult-success {
+
+            display: none;
+
+            text-align: center;
+
+            padding:
+                35px
+                5px
+                15px;
+        }
+
+
+        .aura-consult-success.is-visible {
+
+            display: block;
+
+            animation:
+                auraSuccess
+                .7s
+                ease
+                both;
+        }
+
+
+        .aura-success-symbol {
+
+            width: 52px;
+
+            height: 52px;
+
+            border:
+                1px solid
+                #8a857b;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            margin:
+                0
+                auto
+                25px;
+
+            font-size: 18px;
+        }
+
+
+        .aura-consult-success h2 {
+
+            margin: 0;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 48px;
+
+            line-height: .9;
+
+            font-weight: 400;
+        }
+
+
+        .aura-consult-success h2 em {
+
+            font-style: italic;
+        }
+
+
+        .aura-consult-success >
+        p:not(.aura-consult-eyebrow) {
+
+            color:
+                var(--aura-muted);
+
+            font-size: 11px;
+
+            margin:
+                20px
+                0
+                28px;
+        }
+
+
+        .aura-dark-button {
+
+            display: inline-flex;
+
+            gap: 20px;
+
+            align-items: center;
+
+            padding:
+                15px
+                19px;
+
+            background:
+                var(--aura-dark);
+
+            color: white !important;
+
+            font-size: 8px;
+
+            letter-spacing: 1.2px;
+        }
+
+
+
+        /* ================================
+           QUOTE
+        ================================= */
+
+        .aura-consult-quote {
+
+            padding:
+                90px
+                20px;
+
+            text-align: center;
+
+            background:
+                #dcd7cd;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .aura-consult-quote p {
+
+            margin: 0;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(38px,4.5vw,62px);
+
+            line-height: .9;
+        }
+
+
+        .aura-consult-quote span {
+
+            font-size: 8px;
+
+            letter-spacing: 1.7px;
+
+            color:
+                #767168;
+        }
+
+
+        .aura-quote-line {
+
+            width: 70px;
+
+            height: 1px;
+
+            background:
+                #9f9a90;
+        }
+
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .aura-consult-footer {
+
+            max-width: 1220px;
+
+            margin: auto;
+
+            padding:
+                30px
+                5vw;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-top:
+                1px solid
+                var(--aura-line);
+        }
+
+
+        .aura-consult-footer > div {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .aura-consult-footer > div span {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 24px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .aura-consult-footer > div small {
+
+            font-size: 6px;
+
+            letter-spacing: 2px;
+
+            margin-top: 3px;
+        }
+
+
+        .aura-consult-footer p,
+        .aura-consult-footer > a {
+
+            font-size: 8px;
+
+            color:
+                var(--aura-muted);
+
+            letter-spacing: 1px;
+        }
+
+
+
+        /* ================================
+           ANIMATIONS
+        ================================= */
+
+        @keyframes auraConsultZoom {
+
+            to {
+
+                transform:
+                    scale(1);
+
+            }
+
+        }
+
+
+        @keyframes auraStepIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(15px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    none;
+            }
+        }
+
+
+        @keyframes auraSuccess {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(.96)
+                    translateY(12px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    none;
+            }
+        }
+
+
+        /* ================================
+           REVEAL
+        ================================= */
+
+        .aura-consult-reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity .9s ease,
+                transform .9s
+                cubic-bezier(.2,.7,.2,1);
+        }
+
+
+        .aura-consult-reveal.aura-visible {
+
+            opacity: 1;
+
+            transform: none;
+        }
+
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media(max-width:900px) {
+
+            .aura-consult-nav {
+
+                grid-template-columns:
+                    1fr
+                    auto;
+            }
+
+
+            .aura-consult-links {
+
+                display: none;
+            }
+
+
+            .aura-consult-layout {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 70px;
+            }
+
+        }
+
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media(max-width:620px) {
+
+            .aura-consult-nav {
+
+                padding:
+                    20px
+                    6vw;
+            }
+
+
+            .aura-consult-hero {
+
+                min-height: 680px;
+
+                padding:
+                    130px
+                    7vw
+                    75px;
+            }
+
+
+            .aura-consult-hero h1 {
+
+                font-size: 55px;
+            }
+
+
+            .aura-consult-layout {
+
+                padding:
+                    75px
+                    6vw
+                    90px;
+            }
+
+
+            .aura-consult-form-wrap {
+
+                padding:
+                    35px
+                    25px;
+            }
+
+
+            .aura-field-grid,
+            .aura-choice-grid,
+            .aura-choice-grid--three {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .aura-consult-footer {
+
+                flex-direction:
+                    column;
+
+                gap: 17px;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="aura-consult-page">
+
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="aura-consult-nav">
+
+
+        <a
+            href="index.html"
+            class="aura-consult-logo"
+        >
+
+            <span>
+                AURA
+            </span>
+
+            <small>
+                INTERIOR STUDIO
+            </small>
+
+        </a>
+
+
+        <nav class="aura-consult-links">
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="index.html#about">
+                ABOUT
+            </a>
+
+            <a href="services.html">
+                SERVICES
+            </a>
+
+            <a href="index.html#projects">
+                PROJECTS
+            </a>
+
+            <a href="index.html#blog">
+                BLOG
+            </a>
+
+            <a href="index.html#contact">
+                CONTACT
+            </a>
+
+        </nav>
+
+
+        <a
+            href="services.html"
+            class="aura-consult-back"
+        >
+
+            ← SERVICES
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="aura-consult-hero">
+
+
+        <div class="aura-consult-hero-bg">
+        </div>
+
+
+        <div class="aura-consult-hero-shade">
+        </div>
+
+
+        <div
+            class="
+                aura-consult-hero-copy
+                aura-consult-reveal
+            "
+        >
+
+            <p class="aura-consult-eyebrow">
+
+                BEGIN YOUR AURA JOURNEY
+
+            </p>
+
+
+            <h1>
+
+                Let's create a space
+
+                <br>
+
+                <em>
+                    you'll love coming home to.
+                </em>
+
+            </h1>
+
+
+            <p>
+
+                Tell us about your project,
+                your vision and the way you
+                want to live.
+
+                Our studio will be in touch
+                to arrange your first conversation.
+
+            </p>
+
+        </div>
+
+
+        <div class="aura-consult-hero-mark">
+
+            A
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         MAIN CONSULTATION AREA
+    ================================= -->
+
+    <section class="aura-consult-layout">
+
+
+        <!-- LEFT INFORMATION -->
+
+        <div
+            class="
+                aura-consult-details
+                aura-consult-reveal
+            "
+        >
+
+            <p class="aura-consult-eyebrow">
+
+                THE FIRST STEP
+
+            </p>
+
+
+            <h2>
+
+                A conversation
+
+                <br>
+
+                before a concept.
+
+            </h2>
+
+
+            <p class="aura-consult-body">
+
+                Every AURA project begins with
+                listening.
+
+                <br><br>
+
+                During your consultation,
+                we'll learn about your space,
+                your lifestyle, your priorities
+                and the feeling you want the
+                finished interior to have.
+
+            </p>
+
+
+            <!-- BENEFITS -->
+
+            <div class="aura-consult-benefits">
+
+
+                <div>
+
+                    <span>
+                        01
+                    </span>
+
+                    <p>
+                        Understand your project
+                        & requirements
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        02
+                    </span>
+
+                    <p>
+                        Explore style, budget
+                        & timeline
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        03
+                    </span>
+
+                    <p>
+                        Recommend the right
+                        AURA service
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="aura-consult-contact">
+
+                <span>
+                    STUDIO
+                </span>
+
+
+                <p>
+
+                    Mangalore, Karnataka
+
+                    <br>
+
+                    Mon — Sat · 10:00 — 18:00
+
+                </p>
+
+
+                <a
+                    href="mailto:hello@aurainteriorstudio.com"
+                >
+
+                    hello@aurainteriorstudio.com
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <div
+            class="
+                aura-consult-form-wrap
+                aura-consult-reveal
+            "
+        >
+
+            <form
+                class="aura-consult-form"
+                id="auraConsultForm"
+                novalidate
+            >
+
+
+                <!-- FORM HEADER -->
+
+                <div
+                    class="aura-consult-form-head"
+                >
+
+                    <p class="aura-consult-eyebrow">
+
+                        BOOK A CONSULTATION
+
+                    </p>
+
+
+                    <h2>
+
+                        Tell us about
+
+                        <br>
+
+                        <em>
+                            your project.
+                        </em>
+
+                    </h2>
+
+                </div>
+
+
+
+                <!-- PROGRESS -->
+
+                <div class="aura-consult-progress">
+
+                    <span
+                        class="aura-progress-active"
+                        data-step-line="1"
+                    ></span>
+
+                    <span
+                        data-step-line="2"
+                    ></span>
+
+                    <span
+                        data-step-line="3"
+                    ></span>
+
+                </div>
+
+
+
+                <!-- =========================
+                     STEP 1
+                ========================== -->
+
+                <div
+                    class="
+                        aura-consult-step
+                        is-active
+                    "
+                    data-step="1"
+                >
+
+                    <p class="aura-step-label">
+
+                        01 / ABOUT YOU
+
+                    </p>
+
+
+                    <div class="aura-field-grid">
+
+
+                        <label>
+
+                            <span>
+                                YOUR NAME *
+                            </span>
+
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your full name"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                EMAIL ADDRESS *
+                            </span>
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                PHONE NUMBER
+                            </span>
+
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="+91 98765 43210"
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                LOCATION *
+                            </span>
+
+                            <input
+                                type="text"
+                                name="location"
+                                placeholder="City / area"
+                                required
+                            >
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        class="aura-consult-next"
+                        type="button"
+                        data-next="2"
+                    >
+
+                        NEXT STEP
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =========================
+                     STEP 2
+                ========================== -->
+
+                <div
+                    class="aura-consult-step"
+                    data-step="2"
+                >
+
+                    <p class="aura-step-label">
+
+                        02 / YOUR PROJECT
+
+                    </p>
+
+
+                    <label
+                        class="aura-full-field"
+                    >
+
+                        <span>
+                            WHAT CAN WE HELP WITH? *
+                        </span>
+
+
+                        <select
+                            name="service"
+                            required
+                        >
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option>
+                                Residential Interior Design
+                            </option>
+
+                            <option>
+                                Commercial Interior Design
+                            </option>
+
+                            <option>
+                                Space Planning & Styling
+                            </option>
+
+                            <option>
+                                Turnkey Design & Execution
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+
+                    <div class="aura-choice-title">
+
+                        PROJECT TYPE
+
+                    </div>
+
+
+                    <div class="aura-choice-grid">
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="type"
+                                value="New home"
+                                required
+                            >
+
+                            <span>
+                                New Home
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="type"
+                                value="Renovation"
+                            >
+
+                            <span>
+                                Renovation
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="type"
+                                value="Office"
+                            >
+
+                            <span>
+                                Office
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="type"
+                                value="Retail/Hospitality"
+                            >
+
+                            <span>
+                                Retail / Hospitality
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <label
+                        class="aura-full-field"
+                    >
+
+                        <span>
+                            APPROXIMATE AREA
+                        </span>
+
+                        <input
+                            type="text"
+                            name="area"
+                            placeholder="e.g. 1,500 sq. ft."
+                        >
+
+                    </label>
+
+
+
+                    <div class="aura-step-buttons">
+
+
+                        <button
+                            class="aura-consult-back-btn"
+                            type="button"
+                            data-back="1"
+                        >
+
+                            ← BACK
+
+                        </button>
+
+
+                        <button
+                            class="aura-consult-next"
+                            type="button"
+                            data-next="3"
+                        >
+
+                            NEXT STEP
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     STEP 3
+                ========================== -->
+
+                <div
+                    class="aura-consult-step"
+                    data-step="3"
+                >
+
+                    <p class="aura-step-label">
+
+                        03 / YOUR VISION
+
+                    </p>
+
+
+                    <label
+                        class="aura-full-field"
+                    >
+
+                        <span>
+                            WHAT ARE YOU ENVISIONING? *
+                        </span>
+
+
+                        <textarea
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about your space, style, goals and anything else you'd like us to know."
+                            required
+                        ></textarea>
+
+                    </label>
+
+
+
+                    <div class="aura-choice-title">
+
+                        IDEAL START DATE
+
+                    </div>
+
+
+                    <div
+                        class="
+                            aura-choice-grid
+                            aura-choice-grid--three
+                        "
+                    >
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="start"
+                                value="As soon as possible"
+                            >
+
+                            <span>
+                                ASAP
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="start"
+                                value="1–3 months"
+                            >
+
+                            <span>
+                                1–3 MONTHS
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="start"
+                                value="3+ months"
+                            >
+
+                            <span>
+                                3+ MONTHS
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <div class="aura-step-buttons">
+
+
+                        <button
+                            class="aura-consult-back-btn"
+                            type="button"
+                            data-back="2"
+                        >
+
+                            ← BACK
+
+                        </button>
+
+
+                        <button
+                            class="aura-submit"
+                            type="submit"
+                        >
+
+                            SEND ENQUIRY
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     SUCCESS
+                ========================== -->
+
+                <div
+                    class="aura-consult-success"
+                    id="auraConsultSuccess"
+                >
+
+                    <div class="aura-success-symbol">
+
+                        ✓
+
+                    </div>
+
+
+                    <p class="aura-consult-eyebrow">
+
+                        THANK YOU
+
+                    </p>
+
+
+                    <h2>
+
+                        Your story has
+
+                        <br>
+
+                        <em>
+                            reached our studio.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+
+                        We'll review your enquiry
+                        and get back to you soon.
+
+                    </p>
+
+
+                    <a
+                        href="index.html"
+                        class="aura-dark-button"
+                    >
+
+                        RETURN HOME
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         QUOTE
+    ================================= -->
+
+    <section class="aura-consult-quote">
+
+        <div class="aura-quote-line"></div>
+
+
+        <p>
+
+            “The details are not the details.
+
+            <br>
+
+            They make the design.”
+
+        </p>
+
+
+        <span>
+
+            — CHARLES EAMES
+
+        </span>
+
+
+        <div class="aura-quote-line"></div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="aura-consult-footer">
+
+
+        <div>
+
+            <span>
+                AURA
+            </span>
+
+            <small>
+                INTERIOR STUDIO
+            </small>
+
+        </div>
+
+
+        <p>
+
+            Thoughtful interiors.
+            Timeless design.
+
+        </p>
+
+
+        <a href="index.html">
+
+            HOME ↑
+
+        </a>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* ==========================================
+           SCROLL REVEAL ANIMATION
+        =========================================== */
+
+        const auraConsultReveals =
+            document.querySelectorAll(
+                ".aura-consult-page .aura-consult-reveal"
+            );
+
+
+        const auraConsultObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "aura-visible"
+                                );
+
+                                auraConsultObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        auraConsultReveals.forEach(
+            (element, index) => {
+
+                element.style.transitionDelay =
+                    Math.min(
+                        index * 100,
+                        300
+                    ) + "ms";
+
+                auraConsultObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+
+        /* ==========================================
+           MULTI-STEP FORM
+        =========================================== */
+
+        const auraForm =
+            document.getElementById(
+                "auraConsultForm"
+            );
+
+
+        const auraSteps =
+            [
+                ...document.querySelectorAll(
+                    ".aura-consult-step"
+                )
+            ];
+
+
+        const auraProgress =
+            [
+                ...document.querySelectorAll(
+                    "[data-step-line]"
+                )
+            ];
+
+
+        const auraSuccess =
+            document.getElementById(
+                "auraConsultSuccess"
+            );
+
+
+
+        /* SHOW STEP */
+
+        function auraShowStep(number) {
+
+            auraSteps.forEach(
+                (step) => {
+
+                    step.classList.toggle(
+                        "is-active",
+
+                        step.dataset.step ===
+                        String(number)
+                    );
+
+                }
+            );
+
+
+            auraProgress.forEach(
+                (line, index) => {
+
+                    line.classList.toggle(
+                        "aura-progress-active",
+
+                        index < number
+                    );
+
+                }
+            );
+
+
+            auraForm.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "center"
+
+            });
+
+        }
+
+
+
+        /* VALIDATE STEP */
+
+        function auraValidateStep(number) {
+
+            const step =
+                document.querySelector(
+                    `.aura-consult-step[data-step="${number}"]`
+                );
+
+
+            const requiredFields =
+                [
+                    ...step.querySelectorAll(
+                        "[required]"
+                    )
+                ];
+
+
+            let valid = true;
+
+
+            requiredFields.forEach(
+                (field) => {
+
+                    if (
+                        !field.checkValidity()
+                    ) {
+
+                        valid = false;
+
+                        field.reportValidity();
+
+                    }
+
+                }
+            );
+
+
+            return valid;
+
+        }
+
+
+
+        /* NEXT BUTTON */
+
+        document.querySelectorAll(
+            "[data-next]"
+        ).forEach(
+            (button) => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const currentStep =
+                            Number(
+                                button
+                                .closest(
+                                    ".aura-consult-step"
+                                )
+                                .dataset.step
+                            );
+
+
+                        if (
+                            auraValidateStep(
+                                currentStep
+                            )
+                        ) {
+
+                            auraShowStep(
+                                Number(
+                                    button.dataset.next
+                                )
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* BACK BUTTON */
+
+        document.querySelectorAll(
+            "[data-back]"
+        ).forEach(
+            (button) => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        auraShowStep(
+                            Number(
+                                button.dataset.back
+                            )
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* SUBMIT */
+
+        auraForm.addEventListener(
+            "submit",
+            (event) => {
+
+                event.preventDefault();
+
+
+                if (
+                    !auraValidateStep(3)
+                ) {
+
+                    return;
+
+                }
+
+
+                /* Hide form steps */
+
+                auraSteps.forEach(
+                    (step) => {
+
+                        step.style.display =
+                            "none";
+
+                    }
+                );
+
+
+                /* Complete progress */
+
+                auraProgress.forEach(
+                    (line) => {
+
+                        line.classList.add(
+                            "aura-progress-active"
+                        );
+
+                    }
+                );
+
+
+                /* Hide heading */
+
+                document.querySelector(
+                    ".aura-consult-form-head"
+                ).style.display =
+                    "none";
+
+
+                document.querySelector(
+                    ".aura-consult-progress"
+                ).style.display =
+                    "none";
+
+
+                /* Show success */
+
+                auraSuccess.classList.add(
+                    "is-visible"
+                );
+
+
+                /* Clear form */
+
+                auraForm.reset();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
