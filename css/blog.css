@@ -985,68 +985,45 @@ footer {
     .newsletter-input input {
         font-size: 11px;
     }
-/* ==================================================
+/* =====================================================
    CLIENT REVIEWS
-================================================== */
+===================================================== */
 
 .reviews {
-
     width: 90%;
-
     max-width: 1200px;
-
-    margin: auto;
-
-    padding: 100px 0;
-
+    margin: 0 auto;
+    padding: 110px 0;
 }
 
 
+/* REVIEW HEADING */
+
 .reviews-heading {
-
     display: grid;
-
-    grid-template-columns:
-        1fr 1.5fr 1fr;
-
+    grid-template-columns: 1fr 1.5fr 1fr;
     gap: 40px;
-
     align-items: end;
-
-    margin-bottom: 55px;
-
+    margin-bottom: 60px;
 }
 
 
 .reviews-heading h2 {
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        clamp(40px, 5vw, 65px);
-
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 65px);
     font-weight: 400;
-
     line-height: 1.05;
-
 }
 
 
 .reviews-heading h2 em {
-
     font-weight: 400;
-
 }
 
 
-.reviews-heading > p:last-child {
-
+.reviews-description {
     max-width: 280px;
-
     font-size: 12px;
-
     color: #756e65;
 }
 
@@ -1054,21 +1031,15 @@ footer {
 /* REVIEW GRID */
 
 .reviews-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
 }
 
 
 /* REVIEW CARD */
 
 .review-card {
-
     background: #e8e1d7;
 
     min-height: 330px;
@@ -1076,9 +1047,7 @@ footer {
     padding: 40px 35px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 
     transition:
@@ -1088,24 +1057,17 @@ footer {
 
 
 .review-card:hover {
-
-    transform:
-        translateY(-8px);
+    transform: translateY(-8px);
 
     box-shadow:
-        0 15px 35px
-        rgba(45,36,27,0.12);
-
+        0 15px 35px rgba(45, 36, 27, 0.12);
 }
 
 
 /* QUOTE */
 
 .quote {
-
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size: 70px;
 
@@ -1118,10 +1080,7 @@ footer {
 /* REVIEW TEXT */
 
 .review-text {
-
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size: 20px;
 
@@ -1136,7 +1095,6 @@ footer {
 /* PERSON */
 
 .review-person {
-
     display: flex;
 
     align-items: center;
@@ -1146,7 +1104,6 @@ footer {
 
 
 .review-line {
-
     width: 30px;
 
     height: 1px;
@@ -1156,10 +1113,7 @@ footer {
 
 
 .review-person h3 {
-
-    font-family:
-        "Playfair Display",
-        serif;
+    font-family: "Playfair Display", serif;
 
     font-size: 15px;
 
@@ -1168,6 +1122,7 @@ footer {
 
 
 .review-person p {
+    font-family: "DM Sans", sans-serif;
 
     font-size: 8px;
 
@@ -1179,141 +1134,89 @@ footer {
 }
 
 
-/* ==================================================
+/* =====================================================
    TABLET
-================================================== */
+===================================================== */
 
 @media (max-width: 1023px) {
 
     .reviews-heading {
-
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns: 1fr 1fr;
     }
 
-
-    .reviews-heading > p:last-child {
-
+    .reviews-description {
         grid-column: 2;
-
     }
-
 
     .reviews-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
     }
-
 
     .review-card:last-child {
-
-        grid-column:
-            1 / -1;
-
+        grid-column: 1 / -1;
     }
-
 }
 
 
-/* ==================================================
+/* =====================================================
    MOBILE
-================================================== */
+===================================================== */
 
 @media (max-width: 767px) {
 
     .reviews {
-
         padding: 75px 0;
-
     }
-
 
     .reviews-heading {
-
         display: block;
-
         margin-bottom: 40px;
-
     }
-
 
     .reviews-heading h2 {
-
         font-size: 40px;
-
         margin-bottom: 20px;
-
     }
 
-
-    .reviews-heading > p:last-child {
-
+    .reviews-description {
         max-width: 320px;
-
     }
-
 
     .reviews-grid {
-
         grid-template-columns: 1fr;
-
         gap: 20px;
-
     }
-
 
     .review-card:last-child {
-
         grid-column: auto;
-
     }
-
 
     .review-card {
-
         min-height: 300px;
-
         padding: 35px 25px;
-
     }
-
 
     .review-text {
-
         font-size: 19px;
-
     }
-
 }
 
 
-/* ==================================================
-   SMALL PHONE
-================================================== */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media (max-width: 480px) {
 
     .reviews-heading h2 {
-
         font-size: 34px;
-
     }
-
 
     .review-card {
-
         padding: 30px 22px;
-
     }
-
 
     .review-text {
-
         font-size: 18px;
-
     }
-
 }
